@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ff3600ff;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.bold_500 {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.bold_700 {
+  font-weight: 700;
+}
+
+.bg-dark {
+  background: #333333ff !important;
+}
+
+.navbar-brand img {
+  height: 60px;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0px 10px;
+}
+.nav-link {
+  font-style: italic;
+  color: white !important;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background: var(--primary-color);
+  height: 2px;
+  transition: all 0.2s;
+}
+
+.nav-item:hover .nav-link::before {
+  width: 100%;
+}
+
+.nav-item:hover .nav-link.active {
+  border: none;
+}
+
+@media screen and (max-width: 991px) {
+  .nav-link.active {
+    color: var(--primary-color) !important;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navbar-brand img {
+    height: 40px;
+  }
+  .nav-link {
+    font-size: 0.9em !important;
+  }
+}
