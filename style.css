@@ -24,8 +24,68 @@ body {
   font-weight: 700;
 }
 
+.text_yellow {
+  color: #f4c416;
+}
+
 .bg-dark {
   background: #333333ff !important;
+}
+
+.btn_black,
+.btn_light,
+.btn_half_red,
+.btn_light_green,
+.btn_sky_blue,
+.btn_purple {
+  padding: 10px 15px;
+  font-style: italic;
+  font-weight: 500;
+  display: inline;
+  text-decoration: none;
+  border: none;
+  text-align: center;
+  border-radius: 0;
+}
+
+.btn_black {
+  background: black;
+  color: white;
+}
+.btn_light {
+  background: #ededed;
+  color: black;
+}
+.btn_half_red {
+  background: #ff6969;
+  color: white;
+}
+.btn_light_green {
+  background: #ddff0a;
+  color: black;
+}
+.btn_sky_blue {
+  background: #09f0ff;
+  color: black;
+}
+.btn_purple {
+  background: #650095;
+  color: white;
+}
+
+.btn_black:hover,
+.btn_light:hover,
+.btn_half_red:hover,
+.btn_light_green:hover,
+.btn_sky_blue:hover,
+.btn_purple:hover {
+  background: white;
+  color: black;
+  transition: all 0.2s;
+}
+
+.flex_1 {
+  flex: 1;
 }
 
 .navbar-brand img {
@@ -66,6 +126,91 @@ body {
   border: none;
 }
 
+/* hero section  */
+
+.hero-section {
+  min-height: 50vh;
+  padding: 6em 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/bghero.jpg") center center/cover;
+}
+
+.hero-section iframe {
+  height: 450px;
+  max-width: 350px;
+  width: 100%;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.featured_box {
+  background: white;
+  padding: 40px 20px;
+  box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.featured_child {
+  position: relative;
+}
+
+.featured_top {
+  border: 2px solid #c5c5c5;
+  border-radius: 50%;
+  font-size: 40px;
+  color: var(--primary-color);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.featured_body {
+  text-align: center;
+}
+
+.featured_top_box {
+  position: relative;
+}
+
+.featured_sub .line {
+  position: absolute;
+  top: 45%;
+  border-top: 1px dashed black;
+}
+
+.featured-section {
+  margin-top: -3em;
+}
+
+.challenge-box {
+  position: relative;
+}
+
+.entry-fee {
+  position: relative;
+  display: block;
+  margin: 24px 0;
+  font-size: 20px;
+}
+
+.entry-bg {
+  display: block;
+  background: black;
+  width: 80%;
+  padding: 22px;
+  position: absolute;
+  left: -16px;
+  top: -7px;
+  border-top-right-radius: 50px;
+  z-index: -1;
+  border-bottom-right-radius: 50px;
+}
+
 @media screen and (max-width: 991px) {
   .nav-link.active {
     color: var(--primary-color) !important;
@@ -79,5 +224,23 @@ body {
   }
   .nav-link {
     font-size: 0.9em !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .featured_sub .line {
+    bottom: -8px !important;
+    left: calc(69% - 47px) !important;
+    transform: translateX(-50%);
+    top: auto !important;
+    transform: rotate(90deg);
+    width: 47px !important;
+  }
+  .featured-section .col-md-3 {
+    margin-bottom: 30px;
+  }
+  .featured_body {
+    text-align: left;
+    align-items: start !important;
   }
 }
