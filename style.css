@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500;900;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap");
 
 * {
   margin: 0;
@@ -21,7 +22,7 @@ body {
 }
 
 .bold_700 {
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .text_yellow {
@@ -37,7 +38,8 @@ body {
 .btn_half_red,
 .btn_light_green,
 .btn_sky_blue,
-.btn_purple {
+.btn_purple,
+.btn_primary {
   padding: 10px 15px;
   font-style: italic;
   font-weight: 500;
@@ -73,15 +75,32 @@ body {
   color: white;
 }
 
+.btn_primary {
+  background: var(--primary-color);
+  color: white;
+  line-height: 1.5;
+}
+
+.btn_orange {
+  background: var(--primary-color);
+  color: white;
+  border: 2px solid var(--primary-color);
+  border: 0;
+}
+
 .btn_black:hover,
 .btn_light:hover,
 .btn_half_red:hover,
 .btn_light_green:hover,
 .btn_sky_blue:hover,
-.btn_purple:hover {
+.btn_purple:hover,
+.btn_primary:hover,
+.btn_orange:hover {
   background: white;
   color: black;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
+  border: 0;
 }
 
 .flex_1 {
@@ -101,6 +120,10 @@ body {
   color: white !important;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+footer .nav-link {
+  font-style: normal;
 }
 
 .nav-link.active {
@@ -196,11 +219,12 @@ body {
   display: block;
   margin: 24px 0;
   font-size: 20px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .entry-bg {
   display: block;
-  background: black;
+  background: var(--primary-color);
   width: 80%;
   padding: 22px;
   position: absolute;
@@ -211,10 +235,141 @@ body {
   border-bottom-right-radius: 50px;
 }
 
+.challenge-cta a {
+  font-size: 40px;
+}
+
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsors img {
+  border-radius: 10px;
+  max-width: 180px;
+  width: 100%;
+  margin: 5px;
+}
+
+.number_fact_parent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.number_fact_parent .number_fact_child .number_child_body {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  margin-top: -104px;
+  z-index: -1;
+  min-height: 180px;
+}
+
+.number_fact_parent .number_fact_child .number_child_body h3 {
+  font-size: 45px;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.number_fact_child .number_child_body.one {
+  background: #00adb5;
+}
+.number_fact_child .number_child_body.two {
+  background: #ef5d5c;
+}
+.number_fact_child .number_child_body.three {
+  background: #f3a018;
+}
+.number_fact_child .number_child_body.four {
+  background: #2cb34a;
+}
+
+.number_fact_section_title {
+  text-transform: uppercase;
+  color: #1e3640;
+}
+
+.hexabox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.hexabox .hexa {
+  background: black;
+  clip-path: polygon(
+    50% 0%,
+    90% 20%,
+    100% 60%,
+    75% 100%,
+    25% 100%,
+    0% 60%,
+    10% 20%
+  );
+  width: 15px;
+  height: 15px;
+  margin: 0 6px;
+}
+
+.hexabox .hexa.one {
+  background: #00adb5;
+}
+.hexabox .hexa.two {
+  background: #ef5d5c;
+}
+.hexabox .hexa.three {
+  background: #f3a018;
+}
+.hexabox .hexa.four {
+  background: #2cb34a;
+}
+
+.text-lines {
+  width: 100px;
+  height: 4px;
+  margin: 0 10px;
+  background: #1e3640;
+}
+
+.text-line-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+footer {
+  background: black;
+  padding: 2rem 0;
+}
+
 @media screen and (max-width: 991px) {
   .nav-link.active {
     color: var(--primary-color) !important;
     border: none;
+  }
+  .sponsors img {
+    max-width: 150px;
+  }
+  .number_fact_parent {
+    flex-wrap: wrap;
+  }
+  .number_fact_parent .number_fact_child {
+    width: calc(50% - 10px);
+    margin: 5px;
+  }
+  .text-lines {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .sponsors img {
+    max-width: 100%;
   }
 }
 
@@ -224,6 +379,12 @@ body {
   }
   .nav-link {
     font-size: 0.9em !important;
+  }
+  .challenge-cta a {
+    font-size: 22px;
+  }
+  .number_fact_parent .number_fact_child {
+    width: calc(100% - 10px);
   }
 }
 
