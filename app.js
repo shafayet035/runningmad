@@ -11,7 +11,6 @@ function setLineWidth() {
 }
 
 window.addEventListener("resize", () => {
-  console.log(window.innerWidth);
   if (window.innerWidth > 768) {
     setLineWidth();
   }
