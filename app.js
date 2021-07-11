@@ -19,3 +19,13 @@ window.addEventListener("resize", () => {
 if (window.innerWidth > 768) {
   setLineWidth();
 }
+
+const readAns = document.querySelectorAll(".read_ans");
+const faqBody = document.querySelectorAll(".faq-body");
+
+readAns.forEach((el, index) => {
+  el.addEventListener("click", () => {
+    faqBody[index].classList.toggle("active");
+    el.classList.toggle("faqBtnActive");
+  });
+});
